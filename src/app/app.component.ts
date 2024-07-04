@@ -3,11 +3,18 @@ import { FormBuilder, ReactiveFormsModule } from '@angular/forms';
 import { RouterOutlet } from '@angular/router';
 import { QRCodeComponent } from 'angularx-qrcode';
 import { QrCodeModule } from 'ng-qrcode';
+import { NgxQrcodeStylingModule } from 'ngx-qrcode-styling';
+import { Options } from 'ngx-qrcode-styling';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, ReactiveFormsModule, QrCodeModule],
+  imports: [
+    RouterOutlet,
+    ReactiveFormsModule,
+    QrCodeModule,
+    NgxQrcodeStylingModule,
+  ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
 })
@@ -30,5 +37,13 @@ export class AppComponent {
   }
 
   // QR Code
-  qrcode_value: any = '';
+  qrcode_value: any = null;
+
+  public config: Options = {
+    width: 600,
+    height: 600,
+    image: '/assets/logo.jpg',
+    margin: 5,
+    template: 'luxury',
+  };
 }

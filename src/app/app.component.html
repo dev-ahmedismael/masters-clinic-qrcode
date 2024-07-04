@@ -27,14 +27,22 @@
     </button>
   </form>
 
+  @if (qrcode_value) {
   <div class="flex justify-center">
-    <qr-code
+    <!-- <qr-code
       [value]="qrcode_value"
       size="800"
       errorCorrectionLevel="M"
       centerImageSrc="/assets/logo.jpg"
       centerImageSize="150"
       darkColor="#e7c143"
-    ></qr-code>
+    ></qr-code> -->
+
+    <ngx-qrcode-styling
+      [config]="config"
+      [template]="'luxury'"
+      [data]="qrcode_value"
+    ></ngx-qrcode-styling>
   </div>
+  }
 </main>
