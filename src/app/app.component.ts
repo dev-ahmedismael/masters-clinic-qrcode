@@ -45,5 +45,21 @@ export class AppComponent {
     image: '/assets/logo.jpg',
     margin: 5,
     template: 'luxury',
+    dotsOptions: {
+      gradient: {
+        type: 'linear',
+        colorStops: [
+          { offset: 100, color: '#e7c143' },
+          { offset: 200, color: '#111111' },
+        ],
+      },
+      type: 'classy-rounded',
+    },
+    cornersSquareOptions: {
+      color: '#e7c143',
+    },
+    cornersDotOptions: {
+      color: '#e7c143',
+    },
   };
 }
