@@ -42,7 +42,7 @@ export class AppComponent {
   public config: Options = {
     width: 600,
     height: 600,
-    image: '/assets/logo.jpg',
+    image: 'assets/logo.jpg',
     margin: 5,
     template: 'luxury',
     dotsOptions: {
