@@ -32,19 +32,23 @@ export class AppComponent {
   }
 
   generate_qr() {
-    this.qrcode_value = this.qr_form.controls.url.value;
+    if (this.qr_form.controls.url.value) {
+      this.qrcode_value = this.qr_form.controls.url.value;
+    }
     this.qr_form.reset();
   }
 
   // QR Code
   qrcode_value: any = null;
+  eci = '\u001D003';
 
   public config: Options = {
     width: 600,
     height: 600,
     image: 'assets/logo.jpg',
-    margin: 5,
+    margin: 10,
     template: 'luxury',
+
     dotsOptions: {
       gradient: {
         type: 'linear',
