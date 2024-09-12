@@ -1,0 +1,48 @@
+<nav class="flex justify-center bg-yellow-500 py-2">
+  <img src="assets/logo.jpg" class="w-10 h-10 rounded-full" />
+</nav>
+
+<main class="py-10 flex flex-col gap-10">
+  <p class="text-center text-2xl">
+    Please, Enter the URL which you want to create a QR Code for.
+  </p>
+
+  <form
+    [formGroup]="qr_form"
+    (ngSubmit)="generate_qr()"
+    class="flex flex-col justify-center items-center gap-5 px-20"
+  >
+    <input
+      type="text"
+      name="url"
+      formControlName="url"
+      class="w-52"
+      placeholder="Enter your URL here..."
+    />
+    <button
+      type="submit"
+      class="bg-yellow-500 text-white px-20 py-3 w-fit rounded-lg hover:bg-yellow-600"
+    >
+      Submit
+    </button>
+  </form>
+
+  @if (qrcode_value) {
+  <div class="flex justify-center">
+    <qr-code
+      [value]="qrcode_value"
+      size="800"
+      errorCorrectionLevel="M"
+      centerImageSrc="assets/2.jpg"
+      centerImageSize="130"
+      darkColor="#fbd66e"
+    ></qr-code>
+
+    <!-- <ngx-qrcode-styling
+      [config]="config"
+      [template]="'luxury'"
+      [data]="qrcode_value"
+    ></ngx-qrcode-styling> -->
+  </div>
+  }
+</main>
